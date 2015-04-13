@@ -207,9 +207,9 @@ a.bind_edit:hover {
 	width:308px;
 	margin:86px 10px 10px 10px;
 }
-#key_num_enter {	height:152px; }
-#key_num_0 { width:152px; }
-#key_num_plus { height:152px; }
+#key_num_enter, #key_num_plus { float:right; height:152px; }
+#key_num_0 { float:right; width:152px; }
+#key_num_6, #key_num_5, #key_num_4, #key_num_period { float:right }
 
 /* 
  * End Keyboard Configuration
@@ -234,13 +234,11 @@ a.bind_edit:hover {
 	margin-bottom:50px;
 	text-align:center;
 }
-#mouse_bind_last_l, #mouse_bind_last_r1 {
-	margin-bottom:0px;
-}
-#mouse_bind_last_r1 {
+#mouse_wheel_up {
 	margin-top:-25px;
+  margin-bottom:0px;
 }
-#mouse_bind_last_r2 {
+#mouse_wheel_down {
 	margin:0;
 	border-top:0;
 }
@@ -265,7 +263,7 @@ a.bind_edit:hover {
 	z-index:-100;
 }
 .mouse_title {
-	cursor:pointer;
+	cursor:help;
 	position:relative;
 	z-index:100;
 	font-size:11px;
