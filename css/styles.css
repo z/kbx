@@ -207,9 +207,9 @@ a.bind_edit:hover {
 	width:308px;
 	margin:86px 10px 10px 10px;
 }
-#numpad_enter {	height:152px; }
-#numpad_insert { width:152px; }
-#numpad_plus { height:152px; }
+#key_num_enter {	height:152px; }
+#key_num_insert { width:152px; }
+#key_num_plus { height:152px; }
 
 /* 
  * End Keyboard Configuration
