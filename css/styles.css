@@ -1,0 +1,273 @@
+/*
+ * Copyright 2008 - Nexuiz Ninjaz
+ * 
+ * CSS Developed my Tyler "-z-" Mulligan, works in combination with
+ * a XHTML file that displays a specifically formated XML file I refer
+ * to as Keybind XML or KBML.
+ * 
+ * http://www.nexuizninjaz.com/toolz/keyboard
+ * 
+ * This code is free to use but this copyright must stay in tact.
+ * 
+ */
+
+/* General Page */
+body {
+	width:100%;
+	height:100%;
+	padding:0;
+	margin:0;
+	text-align:left;
+	font-family:verdana,arial,tahoma,sans serif;
+	color:#ccc;
+	background:#555;
+}
+a { color:#aaa; text-decoration:none; }
+a:hover { color:#ddd; text-decoration:underline; }
+
+/* Header */
+#header { 
+	min-height:85px;
+	height:auto !important;
+	height:95px;
+	width:1136px;
+	padding:0 0 0 50px;
+	margin:0;
+}
+#header h1 {
+	text-align:left;
+	color:#eee;
+	margin:10px 0 0 0;
+	padding:0;
+}
+#header h3 {
+	text-align:left;
+	padding:0;
+	margin:0 0 10px 0;
+}
+#bindset_info {
+	float:right;
+	width:610px;
+}
+#bindset_info h3 {
+	font-size:17px;
+	text-align:right;
+	margin:0;
+	padding:0;
+}
+#bindset_info p {
+	font-size:12px;
+	text-align:right;
+	margin:0;
+	padding:0;
+}
+#bindset_info #bind_rating {float:right; width:200px; }
+#bindset_info #bind_share { float:left; margin:18px 0 0 4px; }
+#page_link {
+	margin:5px;
+	padding:2px;
+	color:#ccc;
+	background-color:#444;
+	border:2px solid #888;
+}
+#ajax_loader {
+	clear:left;
+	padding-top:12px;
+	margin-left:auto;
+	margin-right:auto;
+	width:160px;
+	text-align:center;
+}
+
+/* content */
+#bind_container { margin:10px 30px 10px 30px; }
+
+/* 
+ * Start Keyboard Configuration
+ */
+#keyboard_container { margin:4px 20px 10px 20px; }
+#main {	float:left; }
+
+/* General */
+.row {
+	min-width:1px;
+	clear:left;
+	margin:0;
+	padding:0;
+	height:75px;
+}
+.row h2 {
+	margin:20px 0 0 0;
+	padding:4px;
+	font-size:11px;
+}
+
+h2 a { color:#000; }
+h2 a:hover { color:#222; }
+
+.bind_edit {
+	color:#777;
+	background-color:#ddd;
+	float:right;
+	z-index:10000000;
+	margin-right:0;
+	margin-top:0;
+	padding:1px;
+	border-left:1px solid #888;
+	border-bottom:1px solid #888;
+}
+a.bind_edit:hover {
+	color:#555;
+}
+.bind_edit img {
+	border:0;
+}
+
+/* Keys */
+.key, #key_tab, #key_caps_lock, #key_left_shift, #key_left_ctrl, #key_space_bar {
+	float:left;
+	height:75px;
+	border:1px solid #000;
+	font-size:11px;
+	font-family:verdana,sans serif;
+	text-align:center;
+	overflow:hidden;
+	cursor:help;
+}
+.key { width:75px; background-color:#fff; color:#000; }
+
+/* Inside the keys */
+.keyboard_layout {
+	float:left;
+	padding:4px 0 0 4px;
+	font-size:13px;
+	color:#444;
+	z-index:-100;
+}
+.key_title {
+	position:relative;
+	z-index:100;
+	font-size:11px;
+}
+
+/* Specific Keys */
+#key_backspace { width:135px; }
+#key_tab, #key_left_ctrl, #key_right_ctrl, #key_backslash { width:105px; }
+#key_caps_lock { width:130px; }
+#key_enter { width:157px; }
+#key_left_shift, #key_right_shift { width:182px; }
+#key_space_bar { width:477px; }
+#key_left_special, #key_left_alt, #key_right_special, #key_right_alt { width:90px; }
+
+/* function keys */
+#function_keys { width:1140px; }
+.fkey_block {
+	margin-right:43px;
+	border:1px solid #000;
+	float:left;
+}
+.last_fkey_block {
+	border:1px solid #000;
+	float:left;
+}
+
+/* 'Normal' Keys */
+#keyboard { 
+	float:left;
+	border:1px solid #000;
+	margin:10px 24px 20px 0;
+	width:1138px;
+	height:385px;
+}
+
+/* center keys */
+#center_fkey_block {
+	border:1px solid #000;
+	border-bottom:2px solid;
+	margin-bottom:10px;
+}
+#center_chunk {
+	float:left;
+	margin-right:14px;
+	margin-top:0;
+	width:233px;
+}
+#arrows {
+	margin-top:77px;
+	padding-left:77px;
+}
+#arrows_bottom {
+	border:1px solid #000;
+}
+
+/* Numpad */
+#numpad {
+	float:left;
+	border:1px solid #000;
+	width:308px;
+	margin:86px 10px 10px 10px;
+}
+#numpad_enter {	height:152px; }
+#numpad_insert { width:152px; }
+#numpad_plus { height:152px; }
+
+/* 
+ * End Keyboard Configuration
+ */
+
+/*
+ * Start Device Configuration
+ */
+
+/* Mouse */
+#mouse_container {
+	float:left;
+	width:584px;
+	color:#000;
+}
+.mouse_bind {
+	width:132px;
+	height:50px;
+	border:2px solid #333;
+	background-color:#fff;
+	margin-top:50px;
+	margin-bottom:50px;
+	text-align:center;
+}
+#mouse_bind_last_l, #mouse_bind_last_r1 {
+	margin-bottom:0px;
+}
+#mouse_bind_last_r1 {
+	margin-top:-25px;
+}
+#mouse_bind_last_r2 {
+	margin:0;
+	border-top:0;
+}
+#mouse_binds_left {
+	float:left;
+	margin-left:10px;
+}
+#mouse_binds_right {
+	float:left;
+	margin-left:0px;
+}
+
+/* Inside the 'keys' "boxes" */
+.mouse_layout {
+	padding:2px;
+	margin:0;
+	background-color:#666;
+	border-bottom:2px solid #444;
+	font-size:13px;
+	text-align:center;
+	color:#ccc;
+	z-index:-100;
+}
+.mouse_title {
+	cursor:pointer;
+	position:relative;
+	z-index:100;
+	font-size:11px;
+	margin:6px;
+}

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
+  <meta name="description" content="">
+  <meta name="author" content="Tyler -z- Mulligan">
+  <link rel="icon" href="favicon.ico">
+
+  <title>kbx</title>
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+</head>
+
+<body>
+
+  <div id="bind_container">
+    <div id="keyboard_container">
+      <div id="main">
+        <div class="row" id="function_keys">
+          <div class="fkey_block">
+            <div class="key" id="key_esc">
+              <div class="keyboard_layout">esc</div>
+            </div>
+          </div><!-- fkey_block -->
+          <div class="fkey_block">
+            <div class="key" id="key_f1">
+              <div class="keyboard_layout">f1</div>
+            </div>
+            <div class="key" id="key_f2" title="vote no" style="background-color:#FAB07F">
+              <div class="keyboard_layout">f2</div>
+              <h2>Vote No</h2>
+            </div>
+            <div class="key" id="key_f3" title="magic" style="background-color:#FAB07F">
+              <div class="keyboard_layout">f3</div>
+              <h2>Spectate</h2>
+            </div>
+            <div class="key" id="key_f4" title="" style="background-color:#">
+              <div class="keyboard_layout">f4</div>
+            </div>
+          </div><!-- fkey_block -->
+          <div class="fkey_block">
+            <div class="key" id="key_f5" title="menu_show" style="background-color:#FAB07F">
+              <div class="keyboard_layout">f5</div>
+              <h2>pick team</h2>
+            </div>
+            <div class="key" id="key_f6" title="team_auto" style="background-color:#FAB07F">
+              <div class="keyboard_layout">f6</div>
+              <h2>switch teams</h2>
+            </div>
+            <div class="key" id="key_f7" title="" style="background-color:#">
+              <div class="keyboard_layout">f7</div>
+            </div>
+            <div class="key" id="key_f8" title="" style="background-color:#">
+              <div class="keyboard_layout">f8</div>
+            </div>
+          </div><!-- fkey_block -->
+          <div class="last_fkey_block">
+            <div class="key" id="key_f9" title="toggle_fullscreen" style="background-color:#FAB07F">
+              <div class="keyboard_layout">f9</div>
+              <h2>toggle fullscreen</h2>
+            </div>
+            <div class="key" id="key_f10" title="quit" style="background-color:#FAB07F">
+              <div class="keyboard_layout">f10</div>
+              <h2>quit</h2>
+            </div>
+            <div class="key" id="key_f11" title="" style="background-color:#">
+              <div class="keyboard_layout">f11</div>
+            </div>
+            <div class="key" id="key_f12" title="screenshot" style="background-color:#FAB07F">
+              <div class="keyboard_layout">f12</div>
+              <h2>screenshot</h2>
+            </div>
+          </div><!-- .last_fkey_block -->
+        </div><!-- #function_keys -->
+        <div id="keyboard">
+          <div class="row">
+            <div class="key" id="key_backtick" title="toggleconsole" style="background-color:#FAB07F">
+              <div class="keyboard_layout">`</div>
+              <h2>Console</h2>
+            </div>
+            <div class="key" id="key_1" title="nn_help" style="background-color:#C2DBF2">
+              <div class="keyboard_layout">1</div>
+              <h2>I need help</h2>
+            </div>
+            <div class="key" id="key_2" title="nn_attacking" style="background-color:#C2DBF2">
+              <div class="keyboard_layout">2</div>
+              <h2>Attacking</h2>
+            </div>
+            <div class="key" id="key_3" title="nn_defending" style="background-color:#C2DBF2">
+              <div class="keyboard_layout">3</div>
+              <h2>Defending</h2>
+            </div>
+            <div class="key" id="key_4" title="nn_on_my_way" style="background-color:#C2DBF2">
+              <div class="keyboard_layout">4</div>
+              <h2>I'm on my way</h2>
+            </div>
+            <div class="key" id="key_5" title="say_team sorry %p" style="background-color:#BAB0BF">
+              <div class="keyboard_layout">5</div>
+              <h2>Sorry player</h2>
+            </div>
+            <div class="key" id="key_6" title="say sorry %p" style="background-color:#BAB0BF">
+              <div class="keyboard_layout">6</div>
+              <h2>Thanks</h2>
+            </div>
+            <div class="key" id="key_7" title="" style="background-color:#">
+              <div class="keyboard_layout">7</div>
+              
+            </div>
+            <div class="key" id="key_8" title="" style="background-color:#">
+              <div class="keyboard_layout">8</div>
+              
+            </div>
+            <div class="key" id="key_9" title="" style="background-color:#">
+              <div class="keyboard_layout">9</div>
+              
+            </div>
+            <div class="key" id="key_0" title="" style="background-color:#">
+              <div class="keyboard_layout">0</div>
+              
+            </div>
+            <div class="key" id="key_minus" title="" style="background-color:#">
+              <div class="keyboard_layout">-</div>
+              
+            </div>
+            <div class="key" id="key_plus" title="" style="background-color:#">
+              <div class="keyboard_layout">=</div>
+              
+            </div>
+            <div class="key" id="key_backspace" title="" style="background-color:#">
+              <div class="keyboard_layout">backspace</div>
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="key" id="key_tab" title="+showscores" style="background-color:#FAB07F">
+              <div class="keyboard_layout">tab</div>
+              <h2>Score</h2>
+            </div>
+            <div class="key" id="key_q" title="bestweapon 9 4 8" style="background-color:#98D1A9">
+              <div class="keyboard_layout">q</div>
+              <h2>Rocket</h2>
+            </div>
+            <div class="key" id="key_w" title="+forward" style="background-color:#D0DF59">
+              <div class="keyboard_layout">w</div>
+              <h2>Forward</h2>
+            </div>
+            <div class="key" id="key_e" title="impulse 1" style="background-color:#98D1A9">
+              <div class="keyboard_layout">e</div>
+              <h2>Laser</h2>
+            </div>
+            <div class="key" id="key_r" title="bestweapon 3 6 5 8" style="background-color:#98D1A9">
+              <div class="keyboard_layout">r</div>
+              <h2>MG</h2>
+            </div>
+            <div class="key" id="key_t" title="messagemode" style="background-color:#BAB0BF">
+              <div class="keyboard_layout">t</div>
+              <h2>Chat</h2>
+            </div>
+            <div class="key" id="key_y" title="messagemode2" style="background-color:#C2DBF2">
+              <div class="keyboard_layout">y</div>
+              <h2>Team Chat</h2>
+            </div>
+            <div class="key" id="key_u" title="" style="background-color:#">
+              <div class="keyboard_layout">u</div>
+              
+            </div>
+            <div class="key" id="key_i" title="" style="background-color:#">
+              <div class="keyboard_layout">i</div>
+              
+            </div>
+            <div class="key" id="key_o" title="" style="background-color:#">
+              <div class="keyboard_layout">o</div>
+              
+            </div>
+            <div class="key" id="key_p" title="" style="background-color:#">
+              <div class="keyboard_layout">p</div>
+              
+            </div>
+            <div class="key" id="key_left_bracket" title="" style="background-color:#">
+              <div class="keyboard_layout">[</div>
+              
+            </div>
+            <div class="key" id="key_right_bracket" title="" style="background-color:#">
+              <div class="keyboard_layout">]</div>
+              
+            </div>
+            <div class="key" id="key_backslash" title="" style="background-color:#">
+              <div class="keyboard_layout">\</div>
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="key" id="key_caps_lock" title="" style="background-color:#111">
+              <div class="keyboard_layout">caps lock</div>
+              
+            </div>
+            <div class="key" id="key_a" title="+moveleft" style="background-color:#D0DF59">
+              <div class="keyboard_layout">a</div>
+              <h2>Left</h2>
+            </div>
+            <div class="key" id="key_s" title="+back" style="background-color:#D0DF59">
+              <div class="keyboard_layout">s</div>
+              <h2>Back</h2>
+            </div>
+            <div class="key" id="key_d" title="+moveright" style="background-color:#D0DF59">
+              <div class="keyboard_layout">d</div>
+              <h2>Right</h2>
+            </div>
+            <div class="key" id="key_f" title="bestweapon 7 3 1" style="background-color:#98D1A9">
+              <div class="keyboard_layout">f</div>
+              <h2>Nex</h2>
+            </div>
+            <div class="key" id="key_g" title="dropweapon" style="background-color:#55BA63">
+              <div class="keyboard_layout">g</div>
+              <h2>Drop Weapon</h2>
+            </div>
+            <div class="key" id="key_h" title="" style="background-color:#">
+              <div class="keyboard_layout">h</div>
+              
+            </div>
+            <div class="key" id="key_j" title="" style="background-color:#">
+              <div class="keyboard_layout">j</div>
+              
+            </div>
+            <div class="key" id="key_k" title="say '\m/ (-.-) \m/ Hello'" style="background-color:#BAB0BF">
+              <div class="keyboard_layout">k</div>
+              <h2>Hello!</h2>
+            </div>
+            <div class="key" id="key_l" title="say 'Goodbye \m/ (-.-) \m/'" style="background-color:#BAB0BF">
+              <div class="keyboard_layout">l</div>
+              <h2>Goodbye!</h2>
+            </div>
+            <div class="key" id="key_semicolon" title="" style="background-color:#">
+              <div class="keyboard_layout">;</div>
+              
+            </div>
+            <div class="key" id="key_apostrophe" title="toggle crosshair_size 4 3.5 3 3 2.5 2 1.5 1 0.5 0.3 0.1 0; echo Crosshair size $crosshair_size" style="background-color:#FAB07F">
+              <div class="keyboard_layout">'</div>
+              <h2>change crosshair size</h2>
+            </div>
+            <div class="key" id="key_enter" title="" style="background-color:#">
+              <div class="keyboard_layout">enter</div>
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="key" id="key_left_shift" title="+crouch" style="background-color:#D0DF59">
+              <div class="keyboard_layout">shift</div>
+              <h2>Crouch</h2>
+            </div>
+            <div class="key" id="key_z" title="+aot_zoomadjust" style="background-color:#FFD75F">
+              <div class="keyboard_layout">z</div>
+              <h2>Zoom/FOV Adjust</h2>
+            </div>
+            <div class="key" id="key_x" title="fov 130" style="background-color:#FFD75F">
+              <div class="keyboard_layout">x</div>
+              <h2>FOV Reset</h2>
+            </div>
+            <div class="key" id="key_c" title="bestweapon 5 4 8" style="background-color:#98D1A9">
+              <div class="keyboard_layout">c</div>
+              <h2>Electro</h2>
+            </div>
+            <div class="key" id="key_v" title="bestweapon 4 5 8" style="background-color:#98D1A9">
+              <div class="keyboard_layout">v</div>
+              <h2>Mortar</h2>
+            </div>
+            <div class="key" id="key_b" title="" style="background-color:#">
+              <div class="keyboard_layout">b</div>
+              
+            </div>
+            <div class="key" id="key_n" title="say_team good job team/player!" style="background-color:#C2DBF2">
+              <div class="keyboard_layout">n</div>
+              <h2>good job team(mate)!</h2>
+            </div>
+            <div class="key" id="key_m" title="" style="background-color:#">
+              <div class="keyboard_layout">m</div>
+              
+            </div>
+            <div class="key" id="key_comma" title="" style="background-color:#">
+              <div class="keyboard_layout">,</div>
+              
+            </div>
+            <div class="key" id="key_period" title="" style="background-color:#">
+              <div class="keyboard_layout">.</div>
+              
+            </div>
+            <div class="key" id="key_forwardslash" title="" style="background-color:#">
+              <div class="keyboard_layout">/</div>
+              
+            </div>
+            <div class="key" id="key_right_shift" title="" style="background-color:#">
+              <div class="keyboard_layout">shift</div>
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="key" id="key_left_ctrl" title="nn_nevermind" style="background-color:#C2DBF2">
+              <div class="keyboard_layout">ctrl</div>
+              <h2>Nevermind</h2>
+            </div>
+            <div class="key" id="key_left_special" title="" style="background-color:#111">
+              <div class="keyboard_layout">opt</div>
+              
+            </div>
+            <div class="key" id="key_left_alt" title="" style="background-color:#">
+              <div class="keyboard_layout">alt</div>
+              
+            </div>
+            <div class="key" id="key_space_bar" title="+jump" style="background-color:#D0DF59">
+              <div class="keyboard_layout">space bar</div>
+              <h2>Jump</h2>
+            </div>
+            <div class="key" id="key_right_alt" title="" style="background-color:#">
+              <div class="keyboard_layout">alt</div>
+              
+            </div>
+            <div class="key" id="key_right_special" title="" style="background-color:#111">
+              <div class="keyboard_layout">opt</div>
+              
+            </div>
+            <div class="key" id="key_popup" title="" style="background-color:#111">
+              <div class="keyboard_layout">pop</div>
+              
+            </div>
+            <div class="key" id="key_right_ctrl" title="" style="background-color:#">
+              <div class="keyboard_layout">ctrl</div>
+              
+            </div>
+          </div>
+        </div><!-- #main -->
+      </div><!-- #keyboard -->
+      <div id="center_chunk">
+        <div class="row" id="center_fkey_block">
+          <div class="key" title="" style="background-color:#"><div class="keyboard_layout">prt scr</div><h2 class="key_title"></h2></div>
+            <div class="key" title="" style="background-color:#"><div class="keyboard_layout">scr lck</div><h2 class="key_title"></h2></div>
+            <div class="key" title="" style="background-color:#"><div class="keyboard_layout">pause</div><h2 class="key_title"></h2></div>
+        </div>
+        <div style="border:1px solid #000;">
+          <div class="row">
+            <div class="key" title="" style="background-color:#"><div class="keyboard_layout">insert</div><h2 class="key_title"></h2></div>
+            <div class="key" title="" style="background-color:#"><div class="keyboard_layout">home</div><h2 class="key_title"></h2></div>
+            <div class="key" title="exec nn_keybinds.cfg" style="background-color:#F58D80"><div class="keyboard_layout">page up</div><h2 class="key_title">Ninja Binds</h2></div>
+          </div>
+          <div class="row">
+            <div class="key" title="" style="background-color:#"><div class="keyboard_layout">delete</div><h2 class="key_title"></h2></div>
+            <div class="key" title="" style="background-color:#"><div class="keyboard_layout">end</div><h2 class="key_title"></h2></div>
+            <div class="key" title="exec nn_video.cfg" style="background-color:#F58D80"><div class="keyboard_layout">page down</div><h2 class="key_title">Video Binds</h2></div>
+          </div>
+        </div>
+        <div class="row" id="arrows">
+          <div class="key" title="" style="border:2px solid #000;border-bottom:none;background-color:#"><div class="keyboard_layout">up</div><h2 class="key_title"></h2></div>
+        </div>
+        <div class="row" id="arrows_bottom">
+          <div class="key" title="" style="background-color:#"><div class="keyboard_layout">left</div><h2 class="key_title"></h2></div>
+          <div class="key" title="" style="background-color:#"><div class="keyboard_layout">down</div><h2 class="key_title"></h2></div>
+          <div class="key" title="" style="background-color:#"><div class="keyboard_layout">right</div><h2 class="key_title"></h2></div>
+        </div>
+      </div><!-- #center_chunk -->
+      <div id="numpad">
+        <div class="row">
+          <div class="key" title="" style="background-color:#"><div class="keyboard_layout">numlock</div><h2 class="key_title"></h2></div>
+          <div class="key" title="say_team ^1Dropped Flag ^7(^4l:^5%d^7); g_waypointsprite_team_here_d" style="background-color:#C2DBF2"><div class="keyboard_layout">/</div><h2 class="key_title">dropped flag</h2></div>
+          <div class="key" title="say_team ^2Killed Flagcarrier ^7(^4l:^5%y^7); g_waypointsprite_team_p" style="background-color:#C2DBF2"><div class="keyboard_layout">*</div><h2 class="key_title">Killed FC</h2></div>
+          <div class="key" title="say hi / good luck and have fun (-.-) \m/" style="background-color:#BAB0BF"><div class="keyboard_layout">-</div><h2 class="key_title">hi / gl</h2></div>
+        </div>
+        <div class="row">
+          <div class="key" title="say_team ^5Defending ^7(^4l:^5%l^7) ^7(^1h:%h^7 ^2a:%a^7 ^6w:%w^7); g_waypointsprite_team_here" style="background-color:#C2DBF2"><div class="keyboard_layout">7</div><h2 class="key_title">Defending</h2></div>
+          <div class="key" title="say_team ^5Roaming ^7(^4l:^5%l^7) ^7(^1h:%h^7 ^2a:%a^7 ^6w:%w^7); g_waypointsprite_team_here" style="background-color:#C2DBF2"><div class="keyboard_layout">8</div><h2 class="key_title">Roaming</h2></div>
+          <div class="key" title="say_team ^5Attacking ^7(^4l:%l^7) ^7(^1h:%h^7 ^2a:%a^7 ^6w:%w^7); g_waypointsprite_team_here" style="background-color:#C2DBF2"><div class="keyboard_layout">9</div><h2 class="key_title">Attacking</h2></div>
+          <div class="key" title="say Good Game!" id="numpad_plus"style="float:right;background-color:#BAB0BF"><div class="keyboard_layout">+</div><h2 class="key_title">Good Game</h2></div>
+          <div class="key" title="say_team ^1Enemy Seen ^7(^4l:^5%y^7); g_waypointsprite_team_danger_p" style="float:right;background-color:#C2DBF2"><div class="keyboard_layout">6</div><h2 class="key_title">Enemy Seen</h2></div>
+          <div class="key" title="say_team ^3Need Help ^7(^4l:^5%l^7) ^7(^1h:%h^7 ^2a:%a^7 ^6w:%w^7); g_waypointsprite_team_helpme" style="float:right;background-color:#C2DBF2"><div class="keyboard_layout">5</div><h2 class="key_title">Need Help</h2></div>
+          <div class="key" title="say_team ^1Negative" style="float:right;background-color:#C2DBF2"><div class="keyboard_layout">4</div><h2 class="key_title">Negative</h2></div>
+        </div>
+        <div class="row">
+          <div class="key" title="say_team ^4Quad Soon" style="background-color:#C2DBF2"><div class="keyboard_layout">1</div><h2 class="key_title">Quad Soon</h2></div>
+          <div class="key" title="say_team ^6Free Item %x ^7(^4l:^5%y^7); g_waypointsprite_team_here_p" style="background-color:#C2DBF2"><div class="keyboard_layout">2</div><h2 class="key_title">Free Item</h2></div>
+          <div class="key" title="say_team ^6Took Item ^7(^4l:^5%l^7); g_waypointsprite_team_here" style="background-color:#C2DBF2"><div class="keyboard_layout">3</div><h2 class="key_title">Took Item</h2></div>
+          <div class="key" title="say :-) / nice on" id="numpad_enter" style="float:right;background-color:#BAB0BF"><div class="keyboard_layout">enter</div><h2 class="key_title">Nice One</h2></div>
+          <div class="key" title="messagemode2" style="float:right;background-color:#C2DBF2"><div class="keyboard_layout">.</div><h2 class="key_title">teamchat</h2></div>
+          <div class="key" title="messagemode" id="numpad_insert" style="float:right;background-color:#BAB0BF"><div class="keyboard_layout">0</div><h2 class="key_title">chat</h2></div>
+        </div>
+      </div><!-- #numpad -->
+    </div><!-- #keyboard_container -->
+    <div id="mouse_container">
+      <div id="mouse_binds_left">
+        <div class="mouse_bind" title="+fire">
+                <div class="mouse_layout" id="mouse_1">mouse 1</div>
+          <h2 class="mouse_title">Primary Fire</h2>
+        </div>
+        <div class="mouse_bind" title="+hook">
+                <div class="mouse_layout" id="mouse_2">mouse 4</div>
+          <h2 class="mouse_title">Hook</h2>
+        </div>
+        <div class="mouse_bind" title="+aot_menu">
+                <div class="mouse_layout" id="mouse_3">mouse 5</div>
+          <h2 class="mouse_title">CTF Menu</h2>
+        </div>
+        <div class="mouse_bind" id="mouse_bind_last_l" title="+aot_temp_zoom">
+                <div class="mouse_layout" id="mouse_4">mouse 3</div>
+          <h2 class="mouse_title">Zoom</h2>
+        </div>
+      </div>
+      <img src="img/mouse_lines.gif" style="float:left;margin:0;" />
+      <div id="mouse_binds_right">
+        <div class="mouse_bind" title="+fire2">
+                <div class="mouse_layout" id="mouse_5">mouse 2</div>
+          <h2 class="mouse_title">Secondary Fire</h2>
+        </div>
+        <div class="mouse_bind" title="">
+                <div class="mouse_layout" id="mouse_6">mouse 6</div>
+          <h2 class="mouse_title"></h2>
+        </div>
+        <div class="mouse_bind" title="">
+                <div class="mouse_layout" id="mouse_7">mouse 7</div>
+          <h2 class="mouse_title"></h2>
+        </div>
+        <div class="mouse_bind" id="mouse_bind_last_r1" title="prevweapon">
+                <div class="mouse_layout" id="mouse_8">mwheel up</div>
+          <h2 class="mouse_title">Previous Weapon</h2>
+        </div>
+        <div class="mouse_bind" id="mouse_bind_last_r2" title="nextweapon">
+                <div class="mouse_layout" id="mouse_9">mwheel down</div>
+          <h2 class="mouse_title">Next Weapon</h2>
+        </div>
+      </div>
+    </div><!-- #mouse_container -->
+  </div><!-- #bind_container -->
+
+</body>
+</html>
