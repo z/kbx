@@ -144,11 +144,6 @@ a.bind_edit:hover {
 	color:#444;
 	z-index:-100;
 }
-.key_title {
-	position:relative;
-	z-index:100;
-	font-size:11px;
-}
 
 /* Specific Keys */
 #key_backspace { width:135px; }
@@ -157,6 +152,7 @@ a.bind_edit:hover {
 #key_enter { width:157px; }
 #key_left_shift, #key_right_shift { width:182px; }
 #key_space_bar { width:477px; }
+#key_up { border:2px solid #000; border-bottom:none; }
 #key_left_special, #key_left_alt, #key_right_special, #key_right_alt { width:90px; }
 
 /* function keys */
@@ -186,6 +182,7 @@ a.bind_edit:hover {
 	border-bottom:2px solid;
 	margin-bottom:10px;
 }
+#home_block { border:1px solid #000; }
 #center_chunk {
 	float:left;
 	margin-right:14px;
@@ -224,6 +221,10 @@ a.bind_edit:hover {
 	float:left;
 	width:584px;
 	color:#000;
+}
+#mouse_lines {
+ float:left;
+ margin:0;
 }
 .mouse_bind {
 	width:132px;
