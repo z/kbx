@@ -137,7 +137,7 @@ a.bind_edit:hover {
 .key { width:75px; background-color:#fff; color:#000; }
 
 /* Inside the keys */
-.keyboard_layout {
+.key_label, .key div {
 	float:left;
 	padding:4px 0 0 4px;
 	font-size:13px;
@@ -253,7 +253,7 @@ a.bind_edit:hover {
 }
 
 /* Inside the 'keys' "boxes" */
-.mouse_layout {
+.mouse_label, .mouse_bind div {
 	padding:2px;
 	margin:0;
 	background-color:#666;
@@ -263,7 +263,7 @@ a.bind_edit:hover {
 	color:#ccc;
 	z-index:-100;
 }
-.mouse_title {
+.mouse_title, .mouse_bind h2 {
 	cursor:help;
 	position:relative;
 	z-index:100;
