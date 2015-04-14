@@ -270,3 +270,11 @@ a.bind_edit:hover {
 	font-size:11px;
 	margin:6px;
 }
+
+
+
+#stuff {
+  position: absolute;
+  bottom:0;
+  left:10px;
+}

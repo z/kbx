@@ -2,7 +2,7 @@
   { "key_esc": { "title": "menu", "action": "togglemenu", "color": "#FAB07F" } },
   { "key_f1": { "title": "Vote Yes", "action": "vote yes", "color": "#FAB07F" } },
   { "key_f2": { "title": "Vote No", "action": "vote no", "color": "#FAB07F" } },
-  { "key_f3": { "title": "Spectate", "action": "", "color": "#FAB07F" } },
+  { "key_f3": { "title": "Spectate", "action": "spec", "color": "#FAB07F" } },
   { "key_f4": { "title": "Ready", "action": "ready", "color": "#FAB07F" } },
   { "key_f5": { "title": "Pick Team", "action": "menu_showteamselect", "color": "#FAB07F" } },
   { "key_f6": { "title": "Switch Team", "action": "team_auto", "color": "#FAB07F" } },
