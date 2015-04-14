@@ -28,18 +28,9 @@ $(function(){
 
   // Stupid hack to clear them for now
   function clearBinds() {
-    $.get("data/ninja_binds.txt", function(data) {
-      binds = JSON.parse(data);
-
-      binds.forEach(function(e, i, a) {
-        var key = Object.keys(e)[0];
-        // Clear Old
-        var $bind = $("#" + key);
-        $bind.attr("title", "");
-        $bind.css("background-color", "");
-        $("h2", $bind).html("");
-      });
-    });
+    $("#bind_container h2").html("");
+    $("#bind_container div").css("background-color","");
+    $("#bind_container div").attr("title","");
   }
 
   // Initial load
