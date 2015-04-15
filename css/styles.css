@@ -126,6 +126,7 @@ a.bind_edit:hover {
 /* Keys */
 .key, #key_tab, #key_caps_lock, #key_left_shift, #key_left_ctrl, #key_space_bar {
 	float:left;
+  position:relative;
 	height:75px;
 	border:1px solid #000;
 	font-size:11px;
@@ -146,8 +147,9 @@ a.bind_edit:hover {
 }
 
 .key i {
-  float: right;
-  padding: 4px;
+  position: absolute;
+  top: 4px;
+  right: 4px;
   cursor: pointer;
   opacity:0.2;
 }
@@ -300,6 +302,9 @@ a.bind_edit:hover {
   right: 0;
   top:0;
   z-index:1000;
+}
+#key_editor a {
+  cursor: pointer;
 }
 .edit_row {
   padding:5px 0;
