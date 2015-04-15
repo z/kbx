@@ -8,8 +8,11 @@
   <link rel="icon" href="favicon.ico">
 
   <title>kbx</title>
-  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/colpick.css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="js/lib/colpick.js"></script>
   <script src="js/scripts.js"></script>
 </head>
 
@@ -523,6 +526,26 @@
       </div><!-- #mouse_binds_right -->
     </div><!-- #mouse_container -->
   </div><!-- #bind_container -->
+
+  <div id="key_editor">
+    <a id="close_editor">X</a>
+    <h3>Edit Key <span></span></h3>
+    <div class="edit_row">
+      <label>Title</label>
+      <input type="text" id="edit_key_title" />
+    </div>
+    <div class="edit_row">
+      <label>Action</label>
+      <input type="text" id="edit_key_action" />
+    </div>
+    <div class="edit_row">
+      <label>Color</label>
+      <div id="picker"></div>
+    </div>
+    <div class="edit_row">
+      <a id="key_save">Save</a>
+    </div>
+  </div>
 
   <div id="stuff">
     <p>Open your console to see more stuff: <a id="kbx-to-xon">KBX to XON</a> | <a id="parse-vanilla">CFG to KBX</a> | <a id="load-parsed-cfg">Load parsed CFG</a> | <a id="load-ninja-binds">Load Ninja Binds</a></p>

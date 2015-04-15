@@ -132,9 +132,9 @@ a.bind_edit:hover {
 	font-family:verdana,sans serif;
 	text-align:center;
 	overflow:hidden;
-	cursor:help;
 }
 .key { width:75px; background-color:#fff; color:#000; }
+.key.has_action { cursor:help; }
 
 /* Inside the keys */
 .key_label, .key div {
@@ -143,6 +143,16 @@ a.bind_edit:hover {
 	font-size:13px;
 	color:#444;
 	z-index:-100;
+}
+
+.key i {
+  float: right;
+  padding: 4px;
+  cursor: pointer;
+  opacity:0.2;
+}
+.key:hover > i {
+  opacity:1;
 }
 
 /* Specific Keys */
@@ -277,4 +287,20 @@ a.bind_edit:hover {
   position: absolute;
   bottom:0;
   left:10px;
+}
+
+#key_editor {
+  display:none;
+  padding:10px;
+  border:2px solid #888;
+  background-color:#444;
+  width: 300px;
+  height: 500px;
+  position: absolute;
+  right: 0;
+  top:0;
+  z-index:1000;
+}
+.edit_row {
+  padding:5px 0;
 }

@@ -1,6 +1,8 @@
 $(function(){
 
   var binds = [];
+  var edit_index = -1;
+  var edit_key_id = null;
 
   function loadBindsFromJSON(file) {
     // Load Binds
@@ -16,7 +18,10 @@ $(function(){
         // Load New
         if (bind.title != "" || bind.color != "") {
           var $bind = $("#" + key);
-          if (bind.action != "") { $bind.attr("title", bind.action); }
+          if (bind.action != "") {
+            $bind.attr("title", bind.action);
+            $bind.addClass("has_action");
+          }
           if (bind.color != "") { $bind.css("background-color", bind.color); }
           if (bind.title != "") { $("h2", $bind).html(bind.title); }
         }
@@ -31,11 +36,76 @@ $(function(){
     $("#bind_container h2").html("");
     $("#bind_container div").css("background-color","");
     $("#bind_container div").attr("title","");
+    $("#bind_container div").removeClass("has_action");
   }
 
   // Initial load
   loadBindsFromJSON("ninja_binds.txt");
 
+  /*
+   * Other
+   */
+
+  $(".key").each(function() {
+    $(this).prepend('<i class="fa fa-pencil"></i>');
+  });
+
+  $(".key i").click(function() {
+    var $key_editor = $("#key_editor");
+    var key_id = $(this).parent("div").attr("id");
+    var key_name = $(this).siblings("div").html();
+    $key_editor.show();
+    $("h3 span", $key_editor).html(key_name);
+    //console.log(binds);
+    // Look for the bind in the JSON
+    binds.forEach(function(e, i, a) {
+      var key = Object.keys(e)[0];
+      if (key == key_id) {
+        var bind = e[key];
+        console.log(e[key]);
+        console.log(i);
+        edit_index = i;
+        edit_key_id = key_id;
+        $("#edit_key_title").val(bind.title);
+        $("#edit_key_action").val(bind.action);
+        $('#picker').colpickSetColor(bind.color);
+        return false;
+      }
+    });
+  });
+
+  $("#key_save").click(function() {
+    console.log(binds[edit_index]);
+    console.log(binds[edit_index][edit_key_id]);
+    var bind = binds[edit_index][edit_key_id];
+    var $bind = $("#" + edit_key_id);
+    bind.title = $("#edit_key_title").val();
+    bind.action = $("#edit_key_action").val();
+    bind.color = "#" + $(".colpick_hex_field input").val();
+    console.log(bind);
+
+    if (bind.action != "") {
+      $bind.attr("title", bind.action);
+      $bind.addClass("has_action");
+    }
+    if (bind.color != "") { $bind.css("background-color", bind.color); }
+    if (bind.title != "") { $("h2", $bind).html(bind.title); }
+  });
+
+  $("#close_editor").click(function() {
+   $("#key_editor").hide();
+  });
+
+  $('#picker').colpick({
+    flat:true,
+    layout:'hex',
+    colorScheme:'dark',
+    submit:0
+  });
+
+  /*
+   * Examples for debugging
+   */
   $("#kbx-to-xon").click(function(e) {
     kbx_to_xon(binds);
   });
@@ -58,6 +128,10 @@ $(function(){
     clearBinds();
     loadBindsFromJSON("ninja_binds.txt");
   });
+
+  /*
+   * Parsing Functions
+   */
 
   // object to map kbx names to xonotic cfg
   var kbx_names = {
