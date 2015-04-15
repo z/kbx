@@ -68,7 +68,11 @@ $(function(){
         edit_key_id = key_id;
         $("#edit_key_title").val(bind.title);
         $("#edit_key_action").val(bind.action);
-        $('#picker').colpickSetColor(bind.color);
+        if (bind.color != "") {
+          $('#picker').colpickSetColor(bind.color);
+        } else {
+          $('#picker').colpickSetColor("#ffffff");
+        }
         return false;
       }
     });
