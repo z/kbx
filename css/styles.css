@@ -272,9 +272,23 @@ a.bind_edit:hover {
 }
 
 
+#textarea_xonotic_config_import {
+	margin: 1em;
+	overflow-y: scroll;
+	resize: none;
+	clear: both;
+	
+}
 
-#stuff {
-  position: absolute;
-  bottom:0;
-  left:10px;
+#fieldset_preset {
+	border: 0px;
+}
+
+#preset {
+	width: 100px;
+}
+
+/* to vertically align jQuery UI selectmenu and button */
+.menu-button + .ui-selectmenu-button{
+   vertical-align : middle;
 }

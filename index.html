@@ -2,18 +2,32 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0, maximum-scale=2.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
   <meta name="description" content="">
   <meta name="author" content="Tyler -z- Mulligan">
   <link rel="icon" href="favicon.ico">
 
   <title>kbx</title>
-  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-  <script src="js/scripts.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.11.4/themes/black-tie/jquery-ui.css" />
+  <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  <script type="text/javascript" src="js/scripts.js"></script>
 </head>
 
 <body>
+  <button id="button_settings">Settings</button>
+  <div id="dialog_settings">
+	  <fieldset id="fieldset_preset">
+		  <label for="preset">Choose a preset</label>
+		  <select name="preset" id="preset" class="menu-button"></select>
+		  to <button id="button_load_preset">load</button>, or copy and paste the content of your config.cfg file into the box below.
+	  </fieldset>
+	  <textarea id="textarea_xonotic_config_import"></textarea>
+	  <p><a id="kbx-to-xon">KBX to XON</a> | <a id="parse-vanilla">CFG to KBX</a> | <a id="load-parsed-cfg">Load parsed CFG</a> | <a id="load-ninja-binds">Load Ninja Binds</a></p>
+  </div>
   <div id="bind_container">
     <div id="keyboard_container">
       <div id="main">
@@ -523,9 +537,5 @@
       </div><!-- #mouse_binds_right -->
     </div><!-- #mouse_container -->
   </div><!-- #bind_container -->
-
-  <div id="stuff">
-    <p>Open your console to see more stuff: <a id="kbx-to-xon">KBX to XON</a> | <a id="parse-vanilla">CFG to KBX</a> | <a id="load-parsed-cfg">Load parsed CFG</a> | <a id="load-ninja-binds">Load Ninja Binds</a></p>
-  </div>
 </body>
 </html>

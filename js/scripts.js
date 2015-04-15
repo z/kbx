@@ -1,6 +1,51 @@
 $(function(){
 
+  var global = {};
+  var xonotic_config_import = {
+    binds: [],
+    other: [] 
+  };
+  var xonotic_config_import;
   var binds = [];
+  var presets = {
+    'Xonotic Default': 'http://z.github.io/kbx/data/vanilla-config.cfg',
+    'Ninja Bind': 'http://z.github.io/kbx/data/ninja_binds.cfg',
+  };
+  var xonotic_function_colors = [
+
+    "#55BA63", // dark green; drop item/weapon
+    "#98D1A9", // light green; switch to weapons
+    "#BAB0BF", // grey; say others
+    "#C2DBF2", // light blue; say Status report
+    "#D0DF59", // light green; movement
+    "#F58D80", // light red; change bind sets
+    "#FAB07F", // orange; menu, etc.
+    "#FFD75F"  // yellow; adjust views
+  ];
+
+  function loadConfigFromURL(url) {
+    $.get(url, function(data) {
+      $('#textarea_xonotic_config_import').html(data);
+      splitBindsFromConfig(data);
+    });
+  }
+
+  function splitBindsFromConfig(config) {
+      // TODO verify Windows's newline character(s) also work here
+      var lines = config.split("\n");
+      for (var i = 0; i < lines.length; i++) {
+        if (lines[i].match(/^bind /)) {
+          xonotic_config_import.binds.push(lines[i]);
+        } else {
+          xonotic_config_import.other.push(lines[i]);
+        }
+      } 
+  }
+  function joinBindsIntoConfig() {
+    return xonotic_config_import.other.concat(xonotic_config_import.binds).join('\n');
+  }
+
+
 
   function loadBindsFromJSON(file) {
     // Load Binds
@@ -33,31 +78,45 @@ $(function(){
     $("#bind_container div").attr("title","");
   }
 
-  // Initial load
-  loadBindsFromJSON("ninja_binds.txt");
-
-  $("#kbx-to-xon").click(function(e) {
-    kbx_to_xon(binds);
-  });
-
-  $("#parse-vanilla").click(function(e) {
-    // cfg to kbx JSON
-    $.get("data/vanilla-config.cfg", function(data) {
-      var cfg_array = data.split("\n");
-      xon_to_kbx(cfg_array);
+  function kbx_to_xon(kbx_json) {
+    var output = [];
+    kbx_json.forEach(function(e, i, a) {
+      var key = Object.keys(e)[0];
+      var bind = e[key];
+      var k = key.replace("key_","");
+      if (kbx_names[k] != undefined) {
+        output.push('bind ' + kbx_names[k] + ' "' + bind.action + '" // ' + bind.title);
+      } else {
+        output.push('bind ' + k + ' "' + bind.action + '" // ' + bind.title);
+      }
     });
-    e.preventDefault();
-  });
+    console.log(output.join("\n"));
+  }
 
-  $("#load-parsed-cfg").click(function(e) {
-    clearBinds();
-    loadBindsFromJSON("vanilla_binds.txt");
-  });
+  function xon_to_kbx(cfg_array) {
+    var output = [];
+    cfg_array.forEach(function(e, i, a) {
+      var re = /^bind (.+) "(.+)"( (.+))?/i;
+      var raw = e.match(re);
+      if (raw) {
+        //console.log(raw);
+        var bind = raw[1].toLowerCase();
+        var action = raw[2];
 
-  $("#load-ninja-binds").click(function(e) {
-    clearBinds();
-    loadBindsFromJSON("ninja_binds.txt");
-  });
+        var key = xon_names[bind] || bind;
+        key = "key_" + key;
+
+        var o = {};
+        o[key] = { "title": action, "action": action, "color": "" };
+        output.push(o);
+
+      } else {
+        console.warn(e);
+      }
+    });
+    console.log(output);
+    console.log(JSON.stringify(output));
+  }
 
   // object to map kbx names to xonotic cfg
   var kbx_names = {
@@ -125,44 +184,88 @@ $(function(){
     "mwheeldown": "mouse_wheel_down"
   };
 
-  function kbx_to_xon(kbx_json) {
-    var output = [];
-    kbx_json.forEach(function(e, i, a) {
-      var key = Object.keys(e)[0];
-      var bind = e[key];
-      var k = key.replace("key_","");
-      if (kbx_names[k] != undefined) {
-        output.push('bind ' + kbx_names[k] + ' "' + bind.action + '" // ' + bind.title);
-      } else {
-        output.push('bind ' + k + ' "' + bind.action + '" // ' + bind.title);
-      }
+  function main() {
+
+    // setup settings dialog
+    $("#dialog_settings").dialog({
+      autoOpen: false,
+      modal: true,
+      title: "Settings",
+      buttons: {
+        "Show": function() {
+          alert('show');
+          $(this).dialog("close");
+        },
+        "Export": function() {
+          alert('export');
+          $(this).dialog("close");
+        },
+        Cancel: function() {
+          $(this).dialog("close");
+        }
+      },
+      //close: function() {
+      //  form[ 0 ].reset();
+      //  allFields.removeClass( "ui-state-error" );
+      //}
     });
-    console.log(output.join("\n"));
+    // button to open settings dialog
+    $('#button_settings').click(function() {
+      $("#dialog_settings")
+        .dialog("option",{
+          height: $( window ).height() * .8,
+          width: $( window ).width() * .8,
+        })
+        .dialog("open")
+      ;
+      $('#textarea_xonotic_config_import')
+        .height($('#dialog_settings').height()*.7)
+        .width($('#dialog_settings').width()-50)
+      ;
+    });
+    // preset select menu
+    $.each(presets, function(title, url) {
+      $('#preset').append($('<option>', {
+        value: title,
+        text: title
+      }));
+    });
+    $('#preset').selectmenu().selectmenu("option", "width", "auto");
+    // preset load button
+    $('#button_load_preset').button().click(function() {
+      var preset = $("#preset option:selected" ).text();
+      loadConfigFromURL(presets[preset]);
+    });
+
+
+    // Initial load
+    //loadBindsFromJSON("ninja_binds.txt");
+
+    $("#kbx-to-xon").click(function(e) {
+    kbx_to_xon(binds);
+    });
+
+    //$("#parse-vanilla").click(function(e) {
+    //// cfg to kbx JSON
+    //$.get("data/vanilla-config.cfg", function(data) {
+    //  var cfg_array = data.split("\n");
+    //  xon_to_kbx(cfg_array);
+    //});
+    //e.preventDefault();
+    //});
+
+    //$("#load-parsed-cfg").click(function(e) {
+    //clearBinds();
+    //loadBindsFromJSON("vanilla_binds.txt");
+    //});
+
+    //$("#load-ninja-binds").click(function(e) {
+    //clearBinds();
+    //loadBindsFromJSON("ninja_binds.txt");
+    //});
   }
 
-  function xon_to_kbx(cfg_array) {
-    var output = [];
-    cfg_array.forEach(function(e, i, a) {
-      var re = /^bind (.+) "(.+)"( (.+))?/i;
-      var raw = e.match(re);
-      if (raw) {
-        //console.log(raw);
-        var bind = raw[1].toLowerCase();
-        var action = raw[2];
-
-        var key = xon_names[bind] || bind;
-        key = "key_" + key;
-
-        var o = {};
-        o[key] = { "title": action, "action": action, "color": "" };
-        output.push(o);
-
-      } else {
-        console.warn(e);
-      }
-    });
-    console.log(output);
-    console.log(JSON.stringify(output));
-  }
+  main();
 
 });
+// vim: set expandtab ts=2 sw=2:
