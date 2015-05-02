@@ -122,6 +122,10 @@ $(function(){
     $("#download-my-kbx").show();
   });
 
+  $("#load").click(function() {
+    $("#load-my-kbx").show();
+  });
+
   $("#parse_it").click(function() {
     clearBinds();
     var data = $("#my_config").val();
@@ -146,7 +150,31 @@ $(function(){
       }
 
     });
+  });
 
+  $("#load_my_kbx").click(function() {
+    clearBinds();
+    var data = $("#my_kbx").val();
+    var b = JSON.parse(data);
+
+    b.forEach(function(e, i, a) {
+      var key = Object.keys(e)[0];
+      var bind = e[key];
+
+      // loop through the JSON and apply it to the HTML
+
+      // Load New
+      if (bind.title != "" || bind.color != "") {
+        var $bind = $("#" + key);
+        if (bind.action != "") {
+          $bind.attr("title", bind.action);
+          $bind.addClass("has_action");
+        }
+        if (bind.color != "") { $bind.css("background-color", bind.color); }
+        if (bind.title != "") { $("h2", $bind).html(bind.title); }
+      }
+
+    });
   });
 
   $(".close").click(function() {
