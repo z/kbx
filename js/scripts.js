@@ -96,15 +96,62 @@ $(function(){
     if (bind.title != "") { $("h2", $bind).html(bind.title); }
   });
 
-  $("#close_editor").click(function() {
-   $("#key_editor").hide();
-  });
-
   $('#picker').colpick({
     flat:true,
     layout:'hex',
     colorScheme:'dark',
     submit:0
+  });
+
+  $("#about").click(function() {
+    $("#about-info").show();
+  });
+
+  $("#parse").click(function() {
+    $("#parse-my-config").show();
+  });
+
+  $("#download").click(function() {
+    var b = kbx_to_xon(binds);
+    $("#d_my_config").val(b.join("\n"));
+    $("#download-my-config").show();
+  });
+
+  $("#download2").click(function() {
+    $("#d_my_kbx").val(JSON.stringify(binds));
+    $("#download-my-kbx").show();
+  });
+
+  $("#parse_it").click(function() {
+    clearBinds();
+    var data = $("#my_config").val();
+    var cfg_array = data.split("\n");
+    var b = xon_to_kbx(cfg_array);
+
+    b.forEach(function(e, i, a) {
+      var key = Object.keys(e)[0];
+      var bind = e[key];
+
+      // loop through the JSON and apply it to the HTML
+
+      // Load New
+      if (bind.title != "" || bind.color != "") {
+        var $bind = $("#" + key);
+        if (bind.action != "") {
+          $bind.attr("title", bind.action);
+          $bind.addClass("has_action");
+        }
+        if (bind.color != "") { $bind.css("background-color", bind.color); }
+        if (bind.title != "") { $("h2", $bind).html(bind.title); }
+      }
+
+    });
+
+  });
+
+  $(".close").click(function() {
+    var parent = $(this).parent().attr("id");
+    $("#" + parent).hide();
   });
 
   /*
@@ -216,6 +263,7 @@ $(function(){
       }
     });
     console.log(output.join("\n"));
+    return output;
   }
 
   function xon_to_kbx(cfg_array) {
@@ -241,6 +289,7 @@ $(function(){
     });
     console.log(output);
     console.log(JSON.stringify(output));
+    return output;
   }
 
 });

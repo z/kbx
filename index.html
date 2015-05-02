@@ -17,6 +17,23 @@
 </head>
 
 <body>
+
+  <ul id="nav">
+    <li><a href="#about-info" id="about">About</a></li>
+    <li><a href="#parse-my-config" id="parse">Parse My Config</a></li>
+    <li><a href="#download-my-config" id="download">Download My Config</a></li>
+    <li><a href="#download-my-config" id="download2">Download My KBX</a></li>
+    <li>
+      Debug
+      <ul>
+        <li><a id="kbx-to-xon">KBX to XON</a></li>
+        <li><a id="parse-vanilla">CFG to KBX</a></li>
+        <li><a id="load-ninja-binds">Load Ninja Binds</a></li>
+        <li><a id="load-parsed-cfg">Load parsed CFG</a></li>
+      </ul>
+    </li>
+  </ul>
+  
   <div id="bind_container">
     <div id="keyboard_container">
       <div id="main">
@@ -528,7 +545,7 @@
   </div><!-- #bind_container -->
 
   <div id="key_editor">
-    <a id="close_editor">X</a>
+    <a class="close">X</a>
     <h3>Edit Key <span></span></h3>
     <div class="edit_row">
       <label>Title</label>
@@ -547,8 +564,34 @@
     </div>
   </div>
 
-  <div id="stuff">
-    <p>Open your console to see more stuff: <a id="kbx-to-xon">KBX to XON</a> | <a id="parse-vanilla">CFG to KBX</a> | <a id="load-parsed-cfg">Load parsed CFG</a> | <a id="load-ninja-binds">Load Ninja Binds</a></p>
+  <div id="about-info" class="popup">
+    <a class="close">X</a>
+    <h2>KBX</h2>
+    <p>This project is meant to assist players in visualizing and editing their keybinds for Xonotic. It is still very much a work in progress. Please be patient as we roll out more features.</p>
   </div>
+
+  <div id="parse-my-config" class="popup">
+    <a class="close">X</a>
+    <br>
+    Paste your config.cfg binds below and click "parse it"
+    <textarea id="my_config"></textarea>
+    <div class="edit_row">
+      <a id="parse_it">Parse It</a>
+    </div>
+  </div>
+
+  <div id="download-my-config" class="popup">
+    <a class="close">X</a>
+    <br>
+    <textarea id="d_my_config"></textarea>
+  </div>
+
+  <div id="download-my-kbx" class="popup">
+    <a class="close">X</a>
+    <br>
+    Send this crap to -z- if you have an issue or something
+    <textarea id="d_my_kbx"></textarea>
+  </div>
+
 </body>
 </html>
