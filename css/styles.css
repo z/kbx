@@ -399,39 +399,39 @@ textarea {
 
 /* action groups */
 
-.actionGroup_movement {
+.actionCategory_movement {
   background-color: rgb(208, 223, 89);
 }
-.actionGroup_camera {
+.actionCategory_camera {
 
 }
-.actionGroup_program_control {
+.actionCategory_program_control {
   background-color: rgb(245, 141, 128);
 }
-.actionGroup_recording {
+.actionCategory_recording {
 
 }
-.actionGroup_tactical_info {
+.actionCategory_tactical_info {
 
 }
-.actionGroup_chat {
+.actionCategory_chat {
   background-color: rgb(194, 219, 242);
 }
-.actionGroup_game_participation {
+.actionCategory_game_participation {
   background-color: rgb(250, 176, 127);
 }
-.actionGroup_game_info {
+.actionCategory_game_info {
 
 }
-.actionGroup_game_vote {
+.actionCategory_game_vote {
 
 }
-.actionGroup_game_weapon_action {
+.actionCategory_weapon_action {
   background-color: rgb(85, 186, 99);
 }
-.actionGroup_game_weapon {
+.actionCategory_weapon {
   background-color: rgb(152, 209, 169);
 }
-.actionGroup_misc {
+.actionCategory_misc {
   background-color: rgb(186, 176, 191);
 }

@@ -1,4 +1,4 @@
-var action_groups = {
+var category_action_title = {
 
 	"movement": {
 		"+forward": "⏶",
@@ -6,8 +6,8 @@ var action_groups = {
 		"+moveleft": "⏴",
 		"+moveright": "⏵",
 
-		"+jump": "🐇",
-		"+crouch": "🐢",
+		"+jump": "jump",
+		"+crouch": "crouch",
 	},
 
 	"camera": {
@@ -79,6 +79,7 @@ var action_groups = {
 		"weapnext": "next weapon",
 		"weaplast": "last weapon",
 		"bestweapon": "best weapon",
+	},
 
 	"weapon": {
 		"weapon_group_1": "Blaster",
@@ -112,6 +113,5 @@ var action_groups = {
 
 		"menu_showsandboxtools": "menu sandbox",
 	},
-
 
 };

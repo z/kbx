@@ -1,3 +1,4 @@
+var test;
 $(function(){
 
   var binds = [];
@@ -147,6 +148,7 @@ $(function(){
         }
         if (bind.color != "") { $bind.css("background-color", bind.color); }
         if (bind.title != "") { $("h2", $bind).html(bind.title); }
+        if (bind.category != "") { $bind.addClass("actionCategory_"+bind.category); }
       }
 
     });
@@ -308,7 +310,8 @@ $(function(){
         key = "key_" + key;
 
         var o = {};
-        o[key] = { "title": action, "action": action, "color": "" };
+				var actionMetaData = get_action_title_and_category(action);
+        o[key] = { "title": actionMetaData.title, "action": action, "color": "", "category": actionMetaData.category };
         output.push(o);
 
       } else {
@@ -319,5 +322,20 @@ $(function(){
     console.log(JSON.stringify(output));
     return output;
   }
+
+	// find action title/category from the title-category-action mapping hash
+  function get_action_title_and_category(action) {
+    for (var category in category_action_title) {
+			for (var act in category_action_title[category]) {
+				if (action.toLowerCase() == act.toLowerCase()) {
+					return ({"category": category, "title": category_action_title[category][act]});
+				}
+			}
+		}
+		// if we didn't find it in the hash, return the default
+		return ({"category": "misc", "title": action});
+	}
+		
+
 
 });
