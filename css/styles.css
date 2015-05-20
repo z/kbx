@@ -396,3 +396,42 @@ textarea {
   margin-top: -40px; /* This should be half of the total height of your div */
   z-index:1000;
 }
+
+/* action groups */
+
+.actionGroup_movement {
+  background-color: rgb(208, 223, 89);
+}
+.actionGroup_camera {
+
+}
+.actionGroup_program_control {
+  background-color: rgb(245, 141, 128);
+}
+.actionGroup_recording {
+
+}
+.actionGroup_tactical_info {
+
+}
+.actionGroup_chat {
+  background-color: rgb(194, 219, 242);
+}
+.actionGroup_game_participation {
+  background-color: rgb(250, 176, 127);
+}
+.actionGroup_game_info {
+
+}
+.actionGroup_game_vote {
+
+}
+.actionGroup_game_weapon_action {
+  background-color: rgb(85, 186, 99);
+}
+.actionGroup_game_weapon {
+  background-color: rgb(152, 209, 169);
+}
+.actionGroup_misc {
+  background-color: rgb(186, 176, 191);
+}
